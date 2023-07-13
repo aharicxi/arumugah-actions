@@ -1,0 +1,16 @@
+name: Label issues
+on:
+  issues:
+    types:
+      - opened
+jobs:
+  label_issues:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name : Print Issue Details
+        run :  
+          echo "Issue Opened. Details :"
+          echo "Title:${{ github.event.issue.title }}"
+          echo "Body :${{ github.event.issue.title }}"
