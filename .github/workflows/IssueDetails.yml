@@ -1,4 +1,4 @@
-name: Label issues
+name: Issues Details
 on:
   issues:
     types:
@@ -12,5 +12,6 @@ jobs:
       - name : Print Issue Details
         run :  
           echo "Issue Opened. Details :"
+          echo "Title:${{ github.event.issue.number }}"
           echo "Title:${{ github.event.issue.title }}"
-          echo "Body :${{ github.event.issue.title }}"
+          echo "Body :${{ github.event.issue.body }}"
